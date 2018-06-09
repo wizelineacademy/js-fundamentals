@@ -63,6 +63,7 @@ const NotesApp = (() => {
     createNoteId,
     onClick,
     renderNotesList,
+    saveNote,
     showNote,
   };
 })();

@@ -17,7 +17,7 @@ function getNoteById(_id) {
   // This should return a single note object if found;
 };
 
-const updateNote = function(note) {
+const updateNote = function(_id, title, text, index) {
   // Replaces object in array with received one.
 };
 
