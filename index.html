@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Notes App</title>
+  <!-- Import css files -->
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+  <!-- FontAwesome icons library -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="text-center full-width">
+      <h1>My Notes App</h1>
+    </div>
+    <hr>
+    <div class="cols-container">
+      <div class="cols-row">
+        <div class="col-left">
+          <ul id="notesList" class="notes-list">
+            <a href="" class="link">
+              <li class="list-item"></li>
+            </a>
+          </ul>
+        </div>
+        <div class="col-right">
+          <div class="header-container">
+            <div class="title">
+              <input id="noteTitle" type="text" class="title-text" placeholder="Your awesome note title" />
+              <input id="noteId" type="text" class="hidden" />
+            </div>
+            <div class="toolbar">
+              <button id="saveNoteButton" tabindex="-1" onclick="saveNote()"><i class="fa fa-save"></i> Save </button>
+              <button id="addNewNoteButton" tabindex="-1" onclick="addNewNote()"><i class="fa fa-edit"></i> New</button>
+            </div>
+          </div>
+          <div class="editor-container">
+            <textarea id="noteText" name="noteText" class="textarea" placeholder="Do you have something in mind?"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- We need to add a few functionality to our notes app -->
+  <!-- How can we use javascript within html? -->
+</body>
+
+</html>
