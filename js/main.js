@@ -13,35 +13,43 @@ const addNewNote = NotesApp.addNewNote;
 
 // Named functions
 function getNoteById(_id) {
-  // How can we find a note inside our notes array?
-  // This should return a single note object if found;
+  return notes.find(function(item) {
+    return item._id === _id;
+  });
 };
 
-const updateNote = function(note) {
-  // Replaces object in array with received one.
+const updateNote = function(_id, title, text, index) {
+  notes[index].title = title;
+  notes[index].text = text;
 };
 
 // Declared functions
 const insertNote = function(_id, title, text) {
-  // This should receive the title, text and _id of a note as params 
-  // and as its name says, you need to create a new note object and add it to list
+  notes.push({_id: _id, title: title, text: text});
 };
 
 const saveNote = () => NotesApp.saveNote(function(_id, title, text) {
-  // Iterate over notes
-  // Validate if note already exists
-  // If note was found, replace values
-  // If not add it
-  // What's do you think missing?
+  let index;
+  const found = notes.some(function(note, i) {
+    if (note._id === _id) {
+      index = i;
+      return note;
+    };
+  });
+
+  console.log(found)
+  if (found) {
+    updateNote(_id, title, text, index);
+  } else {
+    insertNote(_id, title, text);
+  }
+
+  NotesApp.renderNotesList();
 });
 
 const onClickNote = (event) => NotesApp.onClick(event, function(_id) {
   console.log('Click button Add Note 🖱');
-  let note;
-  // const note;
-  // You will receive an _id of the note
-  // Construct a note object with the same structure of the list
-  // showNote function will render note in editor
+  const note = getNoteById(_id);
   NotesApp.showNote(note);
 });
 

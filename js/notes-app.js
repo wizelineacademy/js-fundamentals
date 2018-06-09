@@ -64,5 +64,6 @@ const NotesApp = (() => {
     onClick,
     renderNotesList,
     showNote,
+    saveNote,
   };
 })();
